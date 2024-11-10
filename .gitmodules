@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: 2024 Niklas Wimmer <mail@nwimmer.me>
+# SPDX-License-Identifier: MIT-0
+
+[submodule "iroh-ffi"]
+	path = iroh-ffi
+	url = https://github.com/n0-computer/iroh-ffi

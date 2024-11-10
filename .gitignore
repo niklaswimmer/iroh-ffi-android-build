@@ -1,0 +1,22 @@
+# SPDX-FileCopyrightText: 2024 Niklas Wimmer <mail@nwimmer.me>
+# SPDX-License-Identifier: MIT-0
+
+# IntelliJ / Android Studio
+.idea/
+!.idea/codeStyles
+!.idea/runConfigurations
+*.iml
+
+# Android
+local.properties
+*.log
+
+# Gradle
+.gradle/
+**/build/
+!**/src/**/build/
+!gradle-wrapper.jar
+!gradle-wrapper.properties
+
+# Other
+.DS_Store

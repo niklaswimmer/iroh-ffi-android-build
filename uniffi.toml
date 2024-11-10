@@ -1,0 +1,9 @@
+# SPDX-FileCopyrightText: 2024 Niklas Wimmer <mail@nwimmer.me>
+# SPDX-License-Identifier: MIT-0
+
+[bindings.kotlin]
+package_name = "iroh"
+# Important! The generated source can not compile for Android otherwise.
+android = true
+# The project is configured for Kotlin 2.0.0 so the generated output should match that version.
+kotlin_target_version = "2.0.0"

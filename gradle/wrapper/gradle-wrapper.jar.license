@@ -1,0 +1,6 @@
+# SPDX-FileCopyrightText: the original authors
+# SPDX-License-Identifier: Apache-2.0
+
+The REUSE tool needs *some* information here, so we give it *some* information.
+This is the same information used by the whole Gradle project, which this JAR
+is a derived work from if I interpret the license correctly.
