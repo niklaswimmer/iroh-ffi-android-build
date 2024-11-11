@@ -1,5 +1,5 @@
 /*
- * SPDX-FileCopyrightText: 019-2021 Brainium Studios LLC
+ * SPDX-FileCopyrightText: 2019-2021 Brainium Studios LLC
  * SPDX-FileCopyrightText: 2024 Niklas Wimmer
  * SPDX-License-Identifier: MIT
  *
