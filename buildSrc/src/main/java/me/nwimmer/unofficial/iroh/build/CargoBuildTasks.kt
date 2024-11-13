@@ -31,7 +31,7 @@ internal enum class CargoProfile(val cargoProfileName: String, val outputDirecto
 
 internal abstract class CargoBuildTask : DefaultTask() {
 
-    @get:InputDirectory
+    @get:Internal
     abstract val cargoManifestDir: DirectoryProperty
 
     @get:Input
@@ -45,6 +45,11 @@ internal abstract class CargoBuildTask : DefaultTask() {
 
     @get:Internal
     abstract val intermediateTargetRootDir: DirectoryProperty
+
+    init {
+        this.inputs.file(this.cargoManifestDir.file("Cargo.toml"))
+        this.inputs.dir(this.cargoManifestDir.dir("src"))
+    }
 
     @TaskAction
     fun build() {
@@ -78,7 +83,7 @@ internal abstract class CargoBuildTask : DefaultTask() {
 }
 
 internal abstract class CargoNdkBuildTask : DefaultTask() {
-    @get:InputDirectory
+    @get:Internal
     abstract val cargoManifestDir: DirectoryProperty
 
     @get:Input
@@ -89,6 +94,11 @@ internal abstract class CargoNdkBuildTask : DefaultTask() {
 
     @get:OutputDirectory
     abstract val outputDirectory: DirectoryProperty
+
+    init {
+        this.inputs.file(this.cargoManifestDir.file("Cargo.toml"))
+        this.inputs.dir(this.cargoManifestDir.dir("src"))
+    }
 
     @TaskAction
     fun build() {

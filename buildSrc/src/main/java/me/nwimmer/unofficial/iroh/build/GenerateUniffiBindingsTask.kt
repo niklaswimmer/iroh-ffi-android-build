@@ -15,12 +15,13 @@ import org.gradle.api.provider.Property
 import org.gradle.api.tasks.Input
 import org.gradle.api.tasks.InputDirectory
 import org.gradle.api.tasks.InputFile
+import org.gradle.api.tasks.Internal
 import org.gradle.api.tasks.OutputDirectory
 import org.gradle.api.tasks.TaskAction
 
 internal abstract class GenerateUniffiBindingsTask : DefaultTask() {
 
-    @get:InputDirectory
+    @get:Internal
     abstract val cargoManifestDir: DirectoryProperty
 
     @get:InputFile
@@ -39,6 +40,9 @@ internal abstract class GenerateUniffiBindingsTask : DefaultTask() {
         this.binName.convention("uniffi-bindgen")
         this.uniffiConfigFile.convention(this.cargoManifestDir.file("uniffi.toml"))
         this.outputDirectory.convention(this.project.layout.buildDirectory.dir("generated/uniffi/bindings"))
+
+        this.inputs.file(this.cargoManifestDir.file("Cargo.toml"))
+        this.inputs.dir(this.cargoManifestDir.dir("src"))
     }
 
     @TaskAction
